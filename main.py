@@ -37,10 +37,11 @@ def main():
     print("--- (STEP 1) FETCHING ARTICLES ---")
     
     articles = fetch_top_articles(
-        api_key=apikeymain.NEWS_API_KEY,
-        topic=apikeymain.TOPIC,
-        count=apikeymain.ARTICLE_COUNT
-    )
+    api_key=apikeymain.NEWS_API_KEY,
+    topic=apikeymain.TOPIC,
+    domains_list=apikeymain.REPUTABLE_DOMAINS, # <-- ADD THIS LINE
+    count=apikeymain.ARTICLE_COUNT
+)
     
     if not articles:
         print("No articles found or API error. Exiting.")

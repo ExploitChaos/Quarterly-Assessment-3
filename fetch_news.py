@@ -8,16 +8,17 @@ import apikeymain
 NEWS_API_KEY = apikeymain.NEWS_API_KEY
 TOPIC = apikeymain.TOPIC
 ARTICLE_COUNT = apikeymain.ARTICLE_COUNT
+DOMAINS_LIST = apikeymain.REPUTABLE_DOMAINS
 
 # --- Function to Fetch News ---
-def fetch_top_articles(api_key, category, topic, count):
+def fetch_top_articles(api_key, domains_list, topic, count):
     """
     Fetches a specified number of top articles for a topic from NewsAPI.
     """
     # URL for the 'top-headlines' endpoint, sorted by relevance
-    url = (f"https://newsapi.org/v2/top-headlines?"
+    url = (f"https://newsapi.org/v2/everything?"
            f"q={topic}&"
-           f"category={category}&"
+           f"domains={domains_list}&"  # <-- ADDED THIS LINE
            f"sortBy=publishedAt&"
            f"pageSize={count}&"
            f"language=en&"
