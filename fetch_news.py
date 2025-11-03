@@ -10,13 +10,14 @@ TOPIC = apikeymain.TOPIC
 ARTICLE_COUNT = apikeymain.ARTICLE_COUNT
 
 # --- Function to Fetch News ---
-def fetch_top_articles(api_key, topic, count):
+def fetch_top_articles(api_key, category, topic, count):
     """
     Fetches a specified number of top articles for a topic from NewsAPI.
     """
-    # URL for the 'everything' endpoint, sorted by relevance
-    url = (f"https://newsapi.org/v2/everything?"
+    # URL for the 'top-headlines' endpoint, sorted by relevance
+    url = (f"https://newsapi.org/v2/top-headlines?"
            f"q={topic}&"
+           f"category={category}&"
            f"sortBy=publishedAt&"
            f"pageSize={count}&"
            f"language=en&"
