@@ -20,7 +20,7 @@ print("Importing modules...")
 try:
     from fetch_news import fetch_top_articles
     from step2_summarize import get_article_text, summarize_text_with_llm
-    from newsapi import send_newsletter_email
+    from sendgrider import send_newsletter_email
     import apikeymain
 except ImportError as e:
     print(f"Error: Could not import a necessary file. {e}")
