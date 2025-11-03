@@ -30,7 +30,7 @@ def send_newsletter_email(recipient, email_content_html):
     message = Mail(
         from_email=SENDER_EMAIL,
         to_emails=recipient,
-        subject="Your AI-Powered News Newsletter",
+        subject="Your 9:30am AI-Powered News Newsletter",
         html_content=email_content_html
     )
 
