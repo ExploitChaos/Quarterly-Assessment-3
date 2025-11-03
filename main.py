@@ -39,7 +39,7 @@ def main():
     articles = fetch_top_articles(
     api_key=apikeymain.NEWS_API_KEY,
     topic=apikeymain.TOPIC,
-    domains_list=apikeymain.REPUTABLE_DOMAINS, # <-- ADD THIS LINE
+    domains_list=apikeymain.REPUTABLE_DOMAINS,
     count=apikeymain.ARTICLE_COUNT
 )
     
