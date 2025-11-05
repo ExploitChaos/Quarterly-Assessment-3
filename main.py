@@ -25,7 +25,7 @@ try:
 except ImportError as e:
     print(f"Error: Could not import a necessary file. {e}")
     print("Please make sure your files are named correctly:")
-    print("fetch_news.py, step2_summarize.py, sendgrider.py, apikeymain.py")
+    print("step1_fetch.py, step2_summarize.py, step3_send_email.py, apikeymain.py")
     exit()
 
 import time
