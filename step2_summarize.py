@@ -46,8 +46,8 @@ def get_article_text(url):
             return None
 
         # Limit text to a reasonable amount to avoid huge API costs
-        return article_text[:15000] 
-    
+        return article_text[:25000] 
+
     except requests.exceptions.RequestException as e:
         print(f"  Error scraping {url}: {e}")
         return None
@@ -65,13 +65,13 @@ def summarize_text_with_llm(text):
         
     try:
         # Truncate to fit model context limit (approx 4096 tokens for gpt-3.5)
-        # 1 token ~= 4 chars, so 15000 chars is safe
+        # 1 token ~= 4 chars, so 25000 chars is safe
         truncated_text = text[:25000]
 
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
-                {"role": "system", "content": "You are a helpful assistant. Summarize the following news article into a concise, email-friendly paragraph (3-4 sentences)."},
+                {"role": "system", "content": "You are a helpful assistant. Summarize the following news article into a concise, email-friendly paragraph (5-6 sentences)."},
                 {"role": "user", "content": truncated_text}
             ]
         )
@@ -91,8 +91,8 @@ if __name__ == "__main__":
     article_content = get_article_text(TEST_URL)
     
     if article_content:
-        print(f"\nSuccessfully scraped text (first 200 chars):")
-        print(article_content[:200] + "...")
+        print(f"\nSuccessfully scraped text (first 500 chars):")
+        print(article_content[:500] + "...")
         
         summary = summarize_text_with_llm(article_content)
         print("\n--- SUMMARY ---")
