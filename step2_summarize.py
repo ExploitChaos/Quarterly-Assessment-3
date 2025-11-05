@@ -66,7 +66,7 @@ def summarize_text_with_llm(text):
     try:
         # Truncate to fit model context limit (approx 4096 tokens for gpt-3.5)
         # 1 token ~= 4 chars, so 15000 chars is safe
-        truncated_text = text[:15000]
+        truncated_text = text[:25000]
 
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
