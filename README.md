@@ -83,10 +83,23 @@ Create a file named apikeymain.py in the root of the project and add the followi
 # Step 1: NewsAPI Key ([https://newsapi.org/](https://newsapi.org/))
 NEWS_API_KEY = "YOUR_NEWSAPI_KEY_HERE"
 
-# Step 2: OpenAI API Key ([https://platform.openai.com/account/api-keys](https://platform.openai.com/account/api-keys))
+# Step 2: Domains
+REPUTABLE_DOMAINS = (
+    "wired.com,"
+    "techcrunch.com,"
+    "venturebeat.com,"
+    "zdnet.com,"
+    "technologyreview.com,"
+    "forbes.com,"
+    "apnews.com,"
+    "reuters.com,"
+    "sciencedaily.com"
+)
+
+# Step 3: OpenAI API Key ([https://platform.openai.com/account/api-keys](https://platform.openai.com/account/api-keys))
 OPENAI_API_KEY = "YOUR_OPENAI_API_KEY_HERE"
 
-# Step 3: SendGrid API Key ([https://app.sendgrid.com/settings/api_keys](https://app.sendgrid.com/settings/api_keys))
+# Step 4: SendGrid API Key ([https://app.sendgrid.com/settings/api_keys](https://app.sendgrid.com/settings/api_keys))
 SENDGRID_API_KEY = "YOUR_SENDGRID_API_KEY_HERE"
 SENDER_EMAIL = "your-verified-sender-email@example.com"
 RECIPIENT_EMAIL = "recipient-email@example.com"
